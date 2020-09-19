@@ -41,3 +41,53 @@ CREATE TABLE Previews (
 	FOREIGN KEY (previewer) REFERENCES Users
 	ON DELETE NO ACTION
 )
+
+CREATE TABLE Users(
+ Email char(20),
+ Name char(20),
+ Pwd char(20),
+ City char(20),
+ Gender char(10),
+ PRIMARY KEY (Email)
+);
+
+CREATE TABLE reviews( // ask diff char and Text
+  reviewer char(20),
+  reviewee char(20),
+  rating Int(5),
+  rtext Text,
+  rdate Date,
+  PRIMARY KEY (reviewer, reviewee)
+  FOREIGN KEY reviewer References Users,
+  FOREIGN KEY reviewee References Users
+
+);
+
+CREATE TABLE Sale(
+ Sid char(20),
+ Cond char(10),
+ descr Char(50),
+ rprice REAL,
+ user char(20) NOT NULL,
+ end_date Date,
+ pid char(11),
+ PRIMARY KEY (Sid),
+ FOREIGN KEY user References Users
+ On Delete No Action,
+ FOREIGN KEY pid References Products
+
+);
+
+CREATE TABLE Bids(
+ Bid Char(10),
+ Amount REAL,
+ bdate DATE,
+ user char(20) NOT NULL,
+ Sid Char(20) Not NULL,
+ PRIMARY KEY (Bid),
+ FOREIGN KEY Sid References sale
+ On Delete No Action,
+ FOREIGN KEY user references Users
+ On Delete No Action
+
+);

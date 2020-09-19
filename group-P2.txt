@@ -1,0 +1,43 @@
+CREATE TABLE Items (
+	no INTEGER,
+	descr TEXT,
+	sid CHAR(20) NOT NULL,
+	pid CHAR(20),
+	PRIMARY KEY (no, sid),
+	FOREIGN KEY (sid) REFERENCES Sales
+	ON DELETE CASCADE,
+	FOREIGN KEY (pid) REFERENCES Products
+)
+
+CREATE TABLE Products (
+	pid CHAR(20),
+	descr TEXT,
+	PRIMARY KEY (pid)
+)
+
+CREATE TABLE Previewed (
+	pid CHAR(20),
+	rid CHAR(20),
+	PRIMARY KEY (rid, pid),
+	FOREIGN KEY (rid) REFERENCES Previews,
+	FOREIGN KEY (pid) REFERENCES Products
+)
+
+CREATE TABLE Endorses (
+	rid CHAR(20),
+	user CHAR(20),
+	PRIMARY KEY (rid, user),
+	FOREIGN KEY (rid) REFERENCES Previews,
+	FOREIGN KEY (user) REFERENCES Users
+)
+
+CREATE TABLE Previews (
+	rid CHAR(20),
+	rtext TEXT,
+	rdate DATE,
+	rating REAL,
+	previewer CHAR(20) NOT NULL,
+	PRIMARY KEY (rid),
+	FOREIGN KEY (previewer) REFERENCES Users
+	ON DELETE NO ACTION
+)

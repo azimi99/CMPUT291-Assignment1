@@ -10,7 +10,7 @@ Comments made by bchelle:
 
 Comments made by sazimi:
     Comments for siby:
-        * The Vote is modelled as a weak entity, thus it needs to have an attribute that will be included as a primary key (needs to have dashed underline).
+        * The Vote is modelled as a weak entity, thus it needs to specify a weak key (An attribute needs to have dashed underline).
         * Voting could be modeled as an association between post and users. I think Vote is not an entity since you cannot identify votes from each other on a post.
         * I don’t think Answers needs to be a weak identity, it can be uniquely identified since due to inheriting PID from posts. Hence, answers should not be modeled as a weak entity in my opinion. The same goes with Accepted Answers. Since it is an Answer and uniquely identifiable it does not need to be a weak entity.
         * Each post entity may be associated with one user. The diagram does not show this constraint. (No arrow pointing towards user from the make association)
@@ -19,7 +19,9 @@ Comments made by sazimi:
     Comments for bchelle:
         * I believe badges do not need to be a weak entity. Badges are identified with their unique class. Also the requirements are describing having a date, badge and user associated with each other through giving a badge. So it would make more sense to have a ternary relationship between badge, badge date and user.
         answer and accepted_answer should not be weak entities. They are independently identifiable. 
-        * A small notation comment on the weak entity: badge. The underlined attributes should have a dashed underline instead of a solid one.
+        * A small notation comment on the weak entity: badge. The underlined attributes should have a dashed underline instead of a solid one to indicate a weak key.
+        * Posts enitity is missing the date attribute.
+        
         * Voting could be modeled as an association between post and users. I think Vote is not an entity since you cannot identify votes on a post.
 
     

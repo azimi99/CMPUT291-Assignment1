@@ -19,9 +19,12 @@ Comments made by sazimi:
         * Each post entity may have one comment from each user. The comment association is missing an arrow pointing to Users to show each post may have a comment from one user.
 
     Comments for bchelle:
-        * I believe badges do not need to be a weak entity. Badges are identified with their unique class. Also the requirements are describing having a date, badge and user associated with each other through giving a badge. So it would make more sense to have a ternary relationship between badge, badge date and user.
-        answer and accepted_answer should not be weak entities. They are independently identifiable. 
-        * A small notation comment on the weak entity: badge. The underlined attributes should have a dashed underline instead of a solid one to indicate a weak key.
+        * I believe badges do not need to be a weak entity. Badges are identified with their unique class. 
+          Also the requirements are describing having a date, badge and user associated with each other through giving a badge. 
+          So it would make more sense to have a ternary relationship between badge, badge date and user.
+        * answer and accepted_answer should not be weak entities. They are independently identifiable. 
+        * A small notation comment on the weak entity: badge. The underlined attributes should have a dashed underline instead of a solid one 
+          to indicate a weak key.
         * Posts enitity is missing the date attribute.
         
         * Voting could be modeled as an association between post and users. I think Vote is not an entity since you cannot identify votes on a post.

@@ -3,7 +3,7 @@ Member 1
   CCID: bchelle
     
 Member 2
-  Name: Alireza Azima
+  Name: Alireza Azimi
   CCID: sazimi
     
 Member 3

@@ -1,1 +1,39 @@
+Comments made by bchelle:
+    Comments for siby: 
+        * The “Answers” entity is uniquely identifiable by its pid, so maybe instead of a weak entity, it can have the participation constraint in relation to the “Question” entity.
+        * The “Accepted Answers” entity is uniquely identifiable by its pid, so maybe instead of a weak entity, it can have the participation constraint in relation to the “Question” entity.
+        * The “Votes” entity is modeled as a weak entity, but it does not have any attributes that can be included in the primary key.
+        * Each “Post” can only be created by one “User” so there needs to be an arrow pointing to the “User” entity in the “User make Post” relation.
+
+    Comments for sazimi:
+        * For the “User votes Post” relation there is no constraint that would prevent a user  from voting multiple times on the same post.
+
+Comments made by sazimi:
+    Comments for siby:
+        * The Vote is modelled as a weak entity, thus it needs to have an attribute that will be included as a primary key (needs to have dashed underline).
+        * Voting could be modeled as an association between post and users. I think Vote is not an entity since you cannot identify votes from each other on a post.
+        * I don’t think Answers needs to be a weak identity, it can be uniquely identified since due to inheriting PID from posts. Hence, answers should not be modeled as a weak entity in my opinion. The same goes with Accepted Answers. Since it is an Answer and uniquely identifiable it does not need to be a weak entity.
+        * Each post entity may be associated with one user. The diagram does not show this constraint. (No arrow pointing towards user from the make association)
+        * Each post entity may have one comment from each user. The comment association is missing an arrow pointing to Users to show each post may have a comment from one user.
+
+    Comments for bchelle:
+        * I believe badges do not need to be a weak entity. Badges are identified with their unique class. Also the requirements are describing having a date, badge and user associated with each other through giving a badge. So it would make more sense to have a ternary relationship between badge, badge date and user.
+        answer and accepted_answer should not be weak entities. They are independently identifiable. 
+        * A small notation comment on the weak entity: badge. The underlined attributes should have a dashed underline instead of a solid one.
+        * Voting could be modeled as an association between post and users. I think Vote is not an entity since you cannot identify votes on a post.
+
+    
+Comments made by siby:
+    Comments for sazimi:  
+        * Vote should be a weak entity in my opinion.
+        * Accepted Answers and Answers can be considered a weak entity in the sense that it can not exist without the question. But it is identifiable, so it is technically not a weak entity. 
+        * Votes are associated with one user, there is no arrow pointing to users in vote relation. One to many relation
+        
+    Comments for bchelle:
+        * Missing association date from post entity
+        * Missing vote weak key
+        * date_given in badge is not unique
+        * Badge does not need to be a weak entity in my opinion since it can be identified with an unique class.
+ 
+
 

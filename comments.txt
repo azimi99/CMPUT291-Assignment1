@@ -12,7 +12,9 @@ Comments made by sazimi:
     Comments for siby:
         * The Vote is modelled as a weak entity, thus it needs to specify a weak key (An attribute needs to have dashed underline).
         * Voting could be modeled as an association between post and users. I think Vote is not an entity since you cannot identify votes from each other on a post.
-        * I don’t think Answers needs to be a weak identity, it can be uniquely identified since due to inheriting PID from posts. Hence, answers should not be modeled as a weak entity in my opinion. The same goes with Accepted Answers. Since it is an Answer and uniquely identifiable it does not need to be a weak entity.
+        * I don’t think Answers needs to be a weak identity, it can be uniquely identified since due to inheriting PID from posts. Hence, answers should not be 
+          modeled as a weak entity in my opinion. The same goes with Accepted Answers. Since it is an Answer and uniquely identifiable it does not need to be a weak 
+          entity.
         * Each post entity may be associated with one user. The diagram does not show this constraint. (No arrow pointing towards user from the make association)
         * Each post entity may have one comment from each user. The comment association is missing an arrow pointing to Users to show each post may have a comment from one user.
 
